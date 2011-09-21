@@ -2,12 +2,6 @@
 ** Vzaar
 */
 
-/*#toplevel_page_[PluginFolder]-[PluginRootFile]*/
-#adminmenu #toplevel_page_vzaar-media-management div.wp-menu-image{background:transparent url('../images/vzaar-logo.png') no-repeat scroll 2px top}
-#adminmenu #toplevel_page_vzaar-media-management.wp-has-current-submenu div.wp-menu-image,
-#adminmenu #toplevel_page_vzaar-media-management.current div.wp-menu-image{background-position:2px center}
-#adminmenu #toplevel_page_vzaar-media-management:hover div.wp-menu-image{background-position:2px bottom}
-
 #newversion {
 	border-color:#CCCCCC;
 	border-style:solid;

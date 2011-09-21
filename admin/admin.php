@@ -22,7 +22,7 @@ class esa_vzaarAdminPanel{
 
 	// integrate the menu	
 	function esa_add_menu()  {
-		add_menu_page( _n( 'Vzaar Media Management', 'Vzaar Media Management', 1, 'vzaarVIDEOS' ), _n( 'VZAAR MEDIA', 'VZAAR MEDIA', 1, 'vzaarVIDEOS' ), $this->user_level, vzaarFOLDER, array (&$this, 'esa_show_menu')/*, 'div'*/ );
+		add_menu_page( _n( 'Vzaar Media Management', 'Vzaar Media Management', 1, 'vzaarVIDEOS' ), _n( 'VZAAR MEDIA', 'VZAAR MEDIA', 1, 'vzaarVIDEOS' ), $this->user_level, vzaarFOLDER, array (&$this, 'esa_show_menu'), plugin_dir_url( __FILE__ ).'/images/v.png' );
 		
 		add_submenu_page( vzaarFOLDER , __('Vzaar Media Settings', 'vzaarVIDEOS'), __('Settings', 'vzaarVIDEOS'), $this->user_level, vzaarFOLDER, array (&$this, 'esa_show_menu'));
 		
