@@ -71,7 +71,9 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 == Frequently Asked Questions ==
 
 When writing a page/post, you can use the following shortcode:
+
 Simple Use : **[vzaarmedia vid="830323"]**
+
 Customised Use : **[vzaarmedia vid="830323" height="186" width="258" color="brown"]**
 
 
