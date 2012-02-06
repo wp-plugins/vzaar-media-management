@@ -3,8 +3,8 @@ Contributors: mamun.reza, eSoftArenaLtd.
 Donate link: http://www.esoftarena.com/contact-us/
 Tags: vzaar,flash,videos,audio,media,admin,post,vzaar-media-management,vzaar videos,esa
 Requires at least: 2.8
-Tested up to: 3.2.1
-Stable tag: 1.1
+Tested up to: 3.3.1
+Stable tag: 1.2
 License: GPLv2 or later
 
 
@@ -79,12 +79,10 @@ Customised Use : **[vzaarmedia vid="830323" height="186" width="258" color="brow
 
 == Changelog == 
 
-= V1.1 - 13.SEPT.2011 =
-* New : All things are New
-* Changed : Nothing
-* Bugfix : None
+= V1.2 - 06.FEB.2012 =
+* Bugfix : There were some warning messages when wp debug mode is set to true. Those are fixed.
 
 == Upgrade Notice ==
 
-Nothing is updated yet !
+Nothing is Upgraded yet !
 

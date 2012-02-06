@@ -4,11 +4,11 @@ Plugin Name: Vzaar Media Management
 Plugin URI: http://www.esoftarena.com/
 Description: This is a Vzaar Media (audio & video) Management plugin developed by <a href="http://www.esoftarena.com">eSoftArena Ltd.</a>
 Author: Enamul
-Version: 1.1
+Version: 1.2
 
 Author URI: http://enamul@esoftarena.com/
 
-Copyright 2007-2010 by Enamul & Vzaar Media Management DEV-Team
+Copyright 2007-2012 by eSoftArena & Vzaar Media Management DEV-Team
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -40,7 +40,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 //ini_set('error_reporting', E_ALL);
 if (!class_exists('esa_vzaarLoader')) {
 class esa_vzaarLoader {
-	var $version     = '1.1';
+	var $version     = '1.2';
 	var $minium_WP   = '2.9';
 	var $options     = '';
 	

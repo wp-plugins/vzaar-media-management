@@ -7,29 +7,29 @@
  */
 class esa_vzaarAdminPanel{
 	//admin user level
-	var $user_level = 8;
-	
+	var $capability = 'activate_plugins';
+
 	// constructor
 	function esa_vzaarAdminPanel() {
 		// Add the admin menu
 		add_action( 'admin_menu', array (&$this, 'esa_add_menu') );
-		
+
 		// Add the script and style files
 		add_action('admin_print_scripts', array(&$this, 'esa_load_scripts') );
 		add_action('admin_print_styles', array(&$this, 'esa_load_styles') );
-		
+
 	}
 
-	// integrate the menu	
+	// integrate the menu
 	function esa_add_menu()  {
-		add_menu_page( _n( 'Vzaar Media Management', 'Vzaar Media Management', 1, 'vzaarVIDEOS' ), _n( 'VZAAR MEDIA', 'VZAAR MEDIA', 1, 'vzaarVIDEOS' ), $this->user_level, vzaarFOLDER, array (&$this, 'esa_show_menu'), plugin_dir_url( __FILE__ ).'/images/v.png' );
-		
-		add_submenu_page( vzaarFOLDER , __('Vzaar Media Settings', 'vzaarVIDEOS'), __('Settings', 'vzaarVIDEOS'), $this->user_level, vzaarFOLDER, array (&$this, 'esa_show_menu'));
-		
-		add_submenu_page( vzaarFOLDER , __('Add Media', 'vzaarVIDEOS'), __('Add Media', 'vzaarVIDEOS'), $this->user_level, 'vzaarMedia-add', array (&$this, 'esa_show_menu'));
-		
-	   // add_submenu_page( vzaarFOLDER , __('Reset / Uninstall', 'vzaarVIDEOS'), __('Reset / Uninstall', 'vzaarVIDEOS'), $this->user_level, 'vzaarVIDEOS-setup', array (&$this, 'esa_show_menu'));
-		
+		add_menu_page( _n( 'Vzaar Media Management', 'Vzaar Media Management', 1, 'vzaarVIDEOS' ), _n( 'VZAAR MEDIA', 'VZAAR MEDIA', 1, 'vzaarVIDEOS' ), $this->capability, vzaarFOLDER, array (&$this, 'esa_show_menu'), plugin_dir_url( __FILE__ ).'/images/v.png' );
+
+		add_submenu_page( vzaarFOLDER , __('Vzaar Media Settings', 'vzaarVIDEOS'), __('Settings', 'vzaarVIDEOS'), $this->capability, vzaarFOLDER, array (&$this, 'esa_show_menu'));
+
+		add_submenu_page( vzaarFOLDER , __('Add Media', 'vzaarVIDEOS'), __('Add Media', 'vzaarVIDEOS'), $this->capability, 'vzaarMedia-add', array (&$this, 'esa_show_menu'));
+
+	   // add_submenu_page( vzaarFOLDER , __('Reset / Uninstall', 'vzaarVIDEOS'), __('Reset / Uninstall', 'vzaarVIDEOS'), $this->capability, 'vzaarVIDEOS-setup', array (&$this, 'esa_show_menu'));
+
 	}
 
 	// load the script for the defined page and load only this code	
