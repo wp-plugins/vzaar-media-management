@@ -15,7 +15,7 @@ function media_upload_vzaarmedia() {
     // Not in use
     $errors = false;
 	// Generate TinyMCE HTML output
-	if ( isset($_POST['send']) ) {
+	if ( isset($_POST['send']) && is_array($_POST['send']) ) {
 		$sendA	= array_keys($_POST['send']);
 		$vidKey	= (string) array_shift($sendA);
 		
@@ -35,7 +35,7 @@ function media_upload_vzaarmedia_form($errors) {
 	global $type, $tab, $vzaar;
 	 
 	media_upload_header();
-	$post_id 	= intval($_REQUEST['post_id']);
+	$post_id 	= isset($_REQUEST['post_id'])? intval($_REQUEST['post_id']) : 0;
 	$picarray 	= array();
 	$vmsg 		= '';
 
@@ -146,11 +146,11 @@ function media_upload_vzaarmedia_form($errors) {
 	-->
 	</script>
 
-<form enctype="multipart/form-data" method="post" action="<?php echo esc_attr($form_action_url); ?>" class="media-upload-form validate" id="library-form">	
+<form enctype="multipart/form-data" method="post" action="" class="media-upload-form validate" id="library-form">
 	<div id="media-items">
 	<?php
 	
-	$title = ($_GET['s'] != 'Title') ? $_GET['s'] : ''; 
+	$title = (isset($_GET['s']) && $_GET['s'] != 'Title') ? $_GET['s'] : '';
 	$labels = '';
 	$count = 20;
 	$page = 1;

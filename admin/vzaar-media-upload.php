@@ -56,7 +56,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 		}
 
 		//Set Info to Retrive Media Info from Vzaar
-		$title = ($_POST['s'] != 'Title') ? $_POST['s'] : ''; 
+		$title = (isset($_POST['s']) && $_POST['s'] != 'Title') ? $_POST['s'] : '';
 		$labels = '';
 		$count = 50;
 		$page = 1;
@@ -137,7 +137,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
             <tbody id="the-list">
 			<?php $i = 0;
 				if(!empty($video_list)){
-					foreach($video_list as $video){
+					foreach((array)$video_list as $video){
 			?>
 				<tr>
 					<th scope="row" class="check-column"><input type="checkbox" name="bulkcheck[]" value="<?php echo $video->id; ?>" /></th>

@@ -27,11 +27,11 @@ class esa_Vzaar_shortcodes {
 			'vid' 				=> 'xxxx',
 			'height' 			=> 'yyyy',
 			'width' 			=> 'zzzz',
-			'color' 			=> $options['vzaar_player_color'],
-			'border' 			=> $options['vzaar_player_border'],
-			'autoplay' 			=> $options['vzaar_player_autoplay'],
-			'looping' 			=> $options['vzaar_player_looping'],
-			'showplaybutton' 	=> $options['vzaar_player_showplaybutton']
+			'color' 			=> isset($options['vzaar_player_color'])? $options['vzaar_player_color']:'',
+			'border' 			=> isset($options['vzaar_player_border'])? $options['vzaar_player_border']:'',
+			'autoplay' 			=> isset($options['vzaar_player_autoplay'])? $options['vzaar_player_autoplay']:'',
+			'looping' 			=> isset($options['vzaar_player_looping'])? $options['vzaar_player_looping']:'',
+			'showplaybutton' 	=> isset($options['vzaar_player_showplaybutton'])? $options['vzaar_player_showplaybutton']:''
 		), $atts));
 		
 		
