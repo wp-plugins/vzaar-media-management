@@ -4,7 +4,7 @@ Donate link: http://www.esoftarena.com/contact-us/
 Tags: vzaar,flash,videos,audio,media,admin,post,vzaar-media-management,vzaar videos,esa
 Requires at least: 2.8
 Tested up to: 3.3.1
-Stable tag: trunk
+Stable tag: 1.1
 License: GPLv2 or later
 
 
@@ -79,7 +79,7 @@ Customised Use : **[vzaarmedia vid="830323" height="186" width="258" color="brow
 
 == Changelog == 
 
-= V1.2 - 06.02.2012 =
+= V1.1 - 06.02.2012 =
 * Bugfix : There were some warning messages when wp debug mode is set to true. Those are fixed.
 
 == Upgrade Notice ==
