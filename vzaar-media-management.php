@@ -8,7 +8,7 @@ Version: 1.2
 
 Author URI: http://esoftarena.co.uk/
 
-Copyright 2007-2011 by Enamul & Esoftarena Development Team.
+Copyright 2007-2012 by Enamul & Esoftarena Development Team.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

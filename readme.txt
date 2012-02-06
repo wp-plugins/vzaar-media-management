@@ -30,7 +30,7 @@ Important Links: ''
 
 == Credits ==
 
-Copyright 2007-2011 by Enamul & Esoftarena Development Team.
+Copyright 2007-2012 by Enamul & Esoftarena Development Team.
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -79,7 +79,7 @@ Customised Use : **[vzaarmedia vid="830323" height="186" width="258" color="brow
 
 == Changelog == 
 
-= V1.2 - 06.FEB.2012 =
+= V1.2 - 06.02.2012 =
 * Bugfix : There were some warning messages when wp debug mode is set to true. Those are fixed.
 
 == Upgrade Notice ==
