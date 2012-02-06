@@ -80,6 +80,9 @@ Customised Use : **[vzaarmedia vid="830323" height="186" width="258" color="brow
 == Changelog == 
 
 = V1.2 - 06.02.2012 =
+* Bugfix : Made compatible with Vzaar API settings.
+
+= V1.1 - 05.02.2012 =
 * Bugfix : There were some warning messages when wp debug mode is set to true. Those are fixed.
 
 == Upgrade Notice ==

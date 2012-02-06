@@ -38,7 +38,7 @@ class esa_vzaarAdminPanel{
 		
 		// init PluginChecker
 		$vzaarCheck 			= new esa_CheckPlugin();	
-		$vzaarCheck->URL 		= vzaarURL;
+		//$vzaarCheck->URL 		= vzaarURL;
 		$vzaarCheck->version 	= vzaarVERSION;
 		$vzaarCheck->name 		= 'vzaar';
 		
