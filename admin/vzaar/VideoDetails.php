@@ -60,7 +60,7 @@ class VideoDetails
 
 	}
 
-	function __construct1($type, $version, $title, $description, $authorName, $authorUrl, $authorAccount, $providerName, $providerUrl, $thumbnailUrl, $thumbnailWidth, $thumbnailHeight, $framegrabUrl, $framegrabWidth, $framegrabHeight, $html, $height, $width, $borderless, $duration, $videoStatus, $videoUrl)
+	function __construct1($type, $version, $title, $description, $authorName, $authorUrl, $authorAccount, $providerName, $providerUrl, $thumbnailUrl, $thumbnailWidth, $thumbnailHeight, $framegrabUrl, $framegrabWidth, $framegrabHeight, $html, $height, $width, $borderless, $duration, $videoStatus)
 	{
 		$this->type = $type;
 		$this->version = $version;
@@ -83,7 +83,6 @@ class VideoDetails
 		$this->borderless = $borderless;
 		$this->duration = $duration;
 		$this->videoStatus = $videoStatus;
-		$this->videoUrl = $videoUrl;
 	}
 
 	/**
@@ -150,7 +149,6 @@ class VideoDetails
 					$vid->version = $jo->version;
 					$vid->width = $jo->width;
 					$vid->videoStatus = (array_key_exists('video_status_id', $jo) ? $jo->video_status_id : 0);
-					$vid->videoUrl = $jo->video_url;
 					$vid->videoStatusDescription = (array_key_exists('video_status_description', $jo) ? $jo->video_status_description : '');
 				}
 			}

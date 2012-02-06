@@ -15,7 +15,7 @@ function media_upload_vzaarmedia() {
     // Not in use
     $errors = false;
 	// Generate TinyMCE HTML output
-	if ( isset($_POST['send']) && is_array($_POST['send']) ) {
+	if ( isset($_POST['send'])/* && is_array($_POST['send'])*/ ) {
 		$sendA	= array_keys($_POST['send']);
 		$vidKey	= (string) array_shift($sendA);
 		
@@ -51,8 +51,9 @@ function media_upload_vzaarmedia_form($errors) {
 	
 	//Find API Signature
 	$uploadSignature = Vzaar::getUploadSignature($redirect_url);
+	//echo '<pre>';var_dump($uploadSignature);echo '</pre>';
 	$signature = $uploadSignature['vzaar-api'];
-	
+	//echo '==========<pre>';var_dump($signature);echo '</pre>';
 	//Set Media Title/Description
 	$title = (isset($_POST['title'])) ? addslashes($_POST['title']) : '';
 	$description = (isset($_POST['description'])) ? addslashes($_POST['description']) : '';
@@ -160,11 +161,15 @@ function media_upload_vzaarmedia_form($errors) {
 	if($options['vzaar_apisecret'] != 'xxxx' && $options['vzaar_apisecret'] != 'yyyy'){
 		$video_list = Vzaar::searchVideoList($options['vzaar_apisecret'], 'true', $title, $labels, $count, $page, $sort);
 	}
-	
+	//echo '<pre>';var_dump($video_list);echo '</pre>';
+	$auth = true;
 	if( !empty($video_list) ) {
-		foreach ($video_list as $i => $video){
-			$video_detail = Vzaar::getVideoDetails($video->id); 
-			
+		foreach ($video_list as $i => $video){ 
+			try{
+				$video_detail = Vzaar::getVideoDetails($video->id, $auth); 
+			}catch (Exception $e) {
+				echo 'Caught exception: ',  $e->getMessage(), "\n";
+			}
 			?>
 			<div id="media-item-<?php echo ($i+1); ?>" class="media-item preloaded">
 			  <strong class='filename'><?php echo $video->title; ?></strong>

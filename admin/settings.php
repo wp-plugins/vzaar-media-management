@@ -30,7 +30,7 @@ class esa_vzaarOptions {
 	function esa_processor() {
     	global $vzaar, $vzaarRewrite;
     	
-    	$old_state = $vzaar->options['usePermalinks'];
+    	//$old_state = $vzaar->options['usePermalinks'];
     
     	if ( isset($_POST['updateoption']) ) {	
     		check_admin_referer('vzaar_settings');
@@ -47,7 +47,7 @@ class esa_vzaarOptions {
     			}
 				
 				// the path should always end with a slash	
-        		$vzaar->options['vzaarvideospath'] = trailingslashit($vzaar->options['vzaarvideospath']);
+        		//$vzaar->options['vzaarvideospath'] = trailingslashit($vzaar->options['vzaarvideospath']);
     		}
     		// Save options
     		update_option('vzaar_options', $vzaar->options);
@@ -115,6 +115,7 @@ class esa_vzaarOptions {
     	$tabs = array();
     	
     	$tabs['account']		= __('Account',		'vzaarVIDEOS');
+		$tabs['esa_player']		= __('Player Settings',		'vzaarVIDEOS');
     	
     	$tabs = apply_filters('vzaar_settings_tabs', $tabs);
     
@@ -129,7 +130,7 @@ class esa_vzaarOptions {
         <p><?php _e('Please wirte your Vzaar API Key and API Secret in respective fields.','vzaarVIDEOS') ?></p>
 		<form name="account" method="post">
 		<?php wp_nonce_field('vzaar_settings') ?>
-        <input type="hidden" name="page_options" value="vzaar_apikey,vzaar_apisecret,vzaar_player_color,vzaar_player_border,vzaar_player_autoplay,vzaar_player_looping,vzaar_player_showplaybutton" />
+        <input type="hidden" name="page_options" value="vzaar_apikey,vzaar_apisecret" />
 			<table class="form-table vzaar-options">
 				<tr valign="top">
 					<th align="left"><?php _e('API Key *','vzaarVIDEOS'); ?></th>
@@ -139,10 +140,28 @@ class esa_vzaarOptions {
 					<th align="left"><?php _e('API Secret *','vzaarVIDEOS'); ?></th>
 					<td><input type="text" size="35" name="vzaar_apisecret" value="<?php echo $vzaar->options['vzaar_apisecret']; ?>" /> ( Vzaar Account Username)</td>
 				</tr>
+				
+			</table>
+		<div class="submit"><input class="button-primary" type="submit" name="updateoption" value="<?php _e('Save Changes'); ?>"/></div>
+		</form>
+    <?php        
+    }
+	
+	
+	function tab_esa_player() {
+        global $vzaar;
+    ?>
+        <!-- Account -->
+		<h2><?php _e('Player Settings','vzaarVIDEOS'); ?></h2>
+		<form name="esa_player" method="post">
+		<?php wp_nonce_field('vzaar_settings') ?>
+        <input type="hidden" name="page_options" value="vzaar_player_color,vzaar_player_border,vzaar_player_autoplay,vzaar_player_looping,vzaar_player_showplaybutton" />
+			<table class="form-table vzaar-options">
+				
 				<tr class="expert" valign="top">
 					<th align="left"><?php _e('Player Color *','vzaarVIDEOS'); ?></th>
 					<td>
-						<select name="vzaar_player_color">
+						<select name="vzaar_player_color" style="width:110px;">
 							<option value="black" <?php if($vzaar->options['vzaar_player_color'] == 'black'){echo ' selected="selected"';} ?>>Black</option>
 							<option value="blue" <?php if($vzaar->options['vzaar_player_color'] == 'blue'){echo ' selected="selected"';} ?>>Blue</option>
 							<option value="red" <?php if($vzaar->options['vzaar_player_color'] == 'red'){echo ' selected="selected"';} ?>>Red</option>
@@ -157,7 +176,7 @@ class esa_vzaarOptions {
 				<tr class="expert" valign="top">
 					<th align="left"><?php _e('Player Border *','vzaarVIDEOS'); ?></th>
 					<td>
-						<select name="vzaar_player_border">
+						<select name="vzaar_player_border" style="width:110px;">
 							<option value="0" <?php if($vzaar->options['vzaar_player_border'] == '0'){echo ' selected="selected"';} ?>>Hide</option>
 							<option value="1" <?php if($vzaar->options['vzaar_player_border'] == '1'){echo ' selected="selected"';} ?>>Show</option>
 						</select> 
@@ -167,7 +186,7 @@ class esa_vzaarOptions {
 				<tr class="expert" valign="top">
 					<th align="left"><?php _e('Autoplay *','vzaarVIDEOS'); ?></th>
 					<td>
-						<select name="vzaar_player_autoplay">
+						<select name="vzaar_player_autoplay" style="width:110px;">
 							<option value="0" <?php if($vzaar->options['vzaar_player_autoplay'] == '0'){echo ' selected="selected"';} ?>>No</option>
 							<option value="1" <?php if($vzaar->options['vzaar_player_autoplay'] == '1'){echo ' selected="selected"';} ?>>Yes</option>
 						</select> 
@@ -177,7 +196,7 @@ class esa_vzaarOptions {
 				<tr class="expert" valign="top">
 					<th align="left"><?php _e('Looping (Autoreply) *','vzaarVIDEOS'); ?></th>
 					<td>
-						<select name="vzaar_player_looping">
+						<select name="vzaar_player_looping" style="width:110px;">
 							<option value="0" <?php if($vzaar->options['vzaar_player_looping'] == '0'){echo ' selected="selected"';} ?>>No</option>
 							<option value="1" <?php if($vzaar->options['vzaar_player_looping'] == '1'){echo ' selected="selected"';} ?>>Yes</option>
 						</select> 
@@ -187,7 +206,7 @@ class esa_vzaarOptions {
 				<tr class="expert" valign="top">
 					<th align="left"><?php _e('Show Play Button *','vzaarVIDEOS'); ?></th>
 					<td>
-						<select name="vzaar_player_showplaybutton">
+						<select name="vzaar_player_showplaybutton" style="width:110px;">
 							<option value="0" <?php if($vzaar->options['vzaar_player_showplaybutton'] == '0'){echo ' selected="selected"';} ?>>Hide</option>
 							<option value="1" <?php if($vzaar->options['vzaar_player_showplaybutton'] == '1'){echo ' selected="selected"';} ?>>Show</option>
 						</select> 

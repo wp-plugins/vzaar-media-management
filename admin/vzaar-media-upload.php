@@ -40,7 +40,7 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 		//Video Edit/Delete/Bulk Delete Block
 		if( (isset($_GET['action'])) && ($_GET['action']== 'edit_video') ){
 			esa_edit_vzaar_video_info($_GET['vid'], $redirect_url);
-			die();
+			return;
 			
 		}else if( (isset($_GET['action'])) && ($_GET['action']== 'delete_video') ){
 			$res = Vzaar::deleteVideo($_GET['vid']); //print_r($res);
@@ -172,9 +172,9 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 	//Media Info Edit Form
 	function esa_edit_vzaar_video_info($vid, $action_url){
 		$video_info = Vzaar::getVideoDetails($vid, true);
-		
 	?>
 	<div class="wrap">
+	
 		<h2><?php _e('Edit Media', 'vzaarvideos') ;?></h2>
 		<form action="<?php echo $action_url;?>" name="media_upload_form" class="landing_page2_cont" enctype="multipart/form-data" method="post" onsubmit="return chkValidity(this);">
 			<div class="form_action2">
@@ -183,7 +183,8 @@ if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) { die('You 
 				<br /><br /><span>Media Title *</span><br />
 				<input class="mendatory" type="text" name="title" id="title" value="<?php echo $video_info->title; ?>" size="64" />
 				<br /><br /><span>Media Description </span><br />
-				<input class="" type="text" name="description" id="description" value="<?php echo $video_info->description; ?>" size="64" />
+				<?php /*?><input class="" type="text" name="description" id="description" value="<?php echo $video_info->description; ?>" size="64" /><?php */?>
+				<textarea name="description" id="description" cols="70" rows="5"><?php echo $video_info->description; ?></textarea>
 				<br /><br />
 				<input type="submit" name="update_media" id="update_media" value="Update" />
 				<br /><br />
