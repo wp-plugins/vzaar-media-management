@@ -4,7 +4,7 @@ Donate link: http://www.esoftarena.com/contact-us/
 Tags: vzaar,flash,videos,audio,media,admin,post,vzaar-media-management,vzaar videos,esa
 Requires at least: 2.8
 Tested up to: 3.3.1
-Stable tag: 1.2
+Stable tag: trunk
 License: GPLv2 or later
 
 
